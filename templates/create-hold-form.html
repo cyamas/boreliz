@@ -63,13 +63,13 @@
         <button type="button" id="zoom-in-btn" onclick="zoom(0)">+</button>
         <button type="button" id="zoom-out-btn" onclick="zoom(-1)">-</button>
     </div>
-    <input id="image-width-input" type="hidden" value="24">
-    <input id="image-height-input" type="hidden" value="24">
+    <input id="image-width-input" name="image-width" type="hidden" value="24">
+    <input id="image-height-input" name="image-height" type="hidden" value="24">
     <input id="image-angle" name="angle" type="range" min="-179" max="180" value="0" oninput="rotateHoldImage(this.value)" required>
     <output id="image-angle-output">Angle: 0</output>
     <div id="edges-input-container">
         Num Edges:
-        <input style="width: fit-content;" id="num-edges-input" name="num-edges-input" type="number" min="1" max="9" oninput="addEdgesToForm(document.getElementById('num-edges-input').value)" required>
+        <input style="width: fit-content;" id="num-edges-input" name="num-edges" type="number" min="1" max="9" oninput="addEdgesToForm(document.getElementById('num-edges-input').value)" required>
     </div>
     <div id="edges-container"></div>
     <button style="margin-top: 5vh;" type="submit">Create Hold</button>

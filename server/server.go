@@ -437,6 +437,7 @@ func createHold(w http.ResponseWriter, r *http.Request, pool *pgxpool.Pool) {
 		http.Error(w, err.Error(), http.StatusBadRequest)
 		return
 	}
+
 	angle, err := strconv.Atoi(r.FormValue("angle"))
 	if err != nil {
 		log.Println(http.StatusBadRequest, "Could not convert angle to int")
@@ -460,9 +461,28 @@ func createHold(w http.ResponseWriter, r *http.Request, pool *pgxpool.Pool) {
 	if err != nil {
 		log.Println(http.StatusBadRequest, "Error retrieving formfile from request")
 		http.Error(w, err.Error(), http.StatusBadRequest)
+		return
 	}
 	if _, err := io.Copy(dst, image); err != nil {
 		log.Println("Could not copy file to directory")
+		return
+	}
+	width, err := strconv.Atoi(r.FormValue("image-width"))
+	if err != nil {
+		log.Println(http.StatusBadRequest, "invalid entry for width")
+		http.Error(w, err.Error(), http.StatusBadRequest)
+		return
+	}
+	height, err := strconv.Atoi(r.FormValue("image-height"))
+	if err != nil {
+		log.Println(http.StatusBadRequest, "invalid entry for height")
+		http.Error(w, err.Error(), http.StatusBadRequest)
+		return
+	}
+	numEdges, err := strconv.Atoi(r.FormValue("num-edges"))
+	if err != nil {
+		log.Println(http.StatusBadRequest, "invalid entry for numEdges")
+		http.Error(w, err.Error(), http.StatusBadRequest)
 		return
 	}
 	hold := struct {
@@ -474,8 +494,9 @@ func createHold(w http.ResponseWriter, r *http.Request, pool *pgxpool.Pool) {
 		Angle        int
 		Texture      int
 		ImagePath    string
-		ImageLength  int
 		ImageWidth   int
+		ImageHeight  int
+		NumEdges     int
 	}{
 		id,
 		r.FormValue("manufacturer"),
@@ -484,10 +505,10 @@ func createHold(w http.ResponseWriter, r *http.Request, pool *pgxpool.Pool) {
 		r.FormValue("color"),
 		angle,
 		texture,
-		r.FormValue("imagePath"),
-		0,
-		0,
+		imagePath,
+		width,
+		height,
+		numEdges,
 	}
 	fmt.Println("hold", hold)
-
 }

@@ -40,6 +40,21 @@ function addEdgesToForm(numEdges) {
 		edgeDiv.appendChild(width)
 		edgeDiv.appendChild(breakElem.cloneNode(true))
 
+		let incutLabel = document.createElement("label")
+		incutLabel.innerHTML = "Incut:"
+		edgeDiv.appendChild(incutLabel)
+
+		let incut = document.createElement("input")
+		incut.id = `edge-${i}-incut`
+		incut.type = "number"
+		incut.name = `edge-${i}-incut`
+		incut.min = 1
+		incut.max = 9
+		incut.step = 1
+		incut.value = 5
+		edgeDiv.appendChild(incut)
+		edgeDiv.appendChild(breakElem.cloneNode(true))
+
 		let depthLabel = document.createElement("label")
 		depthLabel.innerHTML = "Depth:"
 		edgeDiv.appendChild(depthLabel)
