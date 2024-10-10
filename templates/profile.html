@@ -1,0 +1,30 @@
+<button id="profile-btn" hx-get="/profile" hx-target="#membership-container" hx-swap="innerHTML">Profile</button>
+<div id="main" hx-swap-oob="innerHTML">
+    <div id="profile-container">
+        <h5>My Profile</h5>
+        <button id="logbook-btn" hx-get="/logbook" hx-target="#main" hx-swap="innerHTML">Logbook</button>
+        <button id="signout-btn" hx-get="/signout" hx-target="body" hx-swap="innerHTML">Sign Out</button>
+        <div id="measurements-container">
+            {{ template "measurements" . }}
+        </div>
+        <div id="personal-bests-container">
+            <h5>Personal Bests</h5>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Grade</th>
+                        <th>%Vert Reach</th>
+                        <th>%Wingspan</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>11</td>
+                        <td>80%</td>
+                        <td>90%</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+<div/>

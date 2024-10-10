@@ -1,0 +1,286 @@
+body {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+}
+
+h1 {
+	padding: 0;
+	margin: 0;
+	text-align: center;
+}
+
+h3 {
+	margin: 0;
+	padding: 0;
+}
+
+h5 {
+	margin: 5px;
+	padding: 0;
+}
+
+th, td {
+	padding: 5px;
+	margin: 5px;
+}
+
+th {
+	background-color: rgb(76,0,255);
+	color: white;
+}
+
+button {
+	background-color: #24a0ed;
+	color: white;
+	border: none;
+	border-radius: 8px;
+	padding: 5px;
+	margin: 5px;
+	font-size: 16px;
+	font-weight: 700;
+	cursor: pointer;
+}
+
+input {
+	background-color: white;
+	border: 1px solid black;
+	border-radius: 8px;
+	width: 15vw;
+	height: 2vh;
+	margin: 5px;
+	padding: 5px;
+	cursor: pointer;
+}
+
+#wall-select {
+	width: 5vw;
+	height: 4vh;
+}
+
+select {
+	background-color: white;
+	border: 1px solid black;
+	border-radius: 8px;
+	width: 16vw;
+	height: 3vh;
+	margin: 5px;
+	padding: 5px;
+	cursor: pointer;
+}
+
+option {
+	cursor: pointer;
+}
+
+#main-nav {
+	display: flex;
+}
+
+#main {
+	height: 80vh;
+}
+
+#climbing-container {
+	height: 80vh;
+	overflow-y: auto;
+}
+
+#climbing-nav {
+	display: flex;
+	margin-bottom: 2vh;
+}
+
+#yama{
+	display: grid;
+	grid-template-rows: repeat(24, 3.33vh);
+	grid-template-columns: repeat(24, 3.33vh);
+	width: fit-content;
+	height: fit-content;
+	background-color: rgb(200, 195, 255);
+	border: 2px solid black;
+	border-right: 3px solid black;
+	padding: 2vh;
+}
+
+
+#marjoram{
+	display: grid;
+	grid-template-rows: repeat(20, 3.33vh);
+	grid-template-columns: repeat(16, 3.33vh);
+	width: fit-content;
+	height: fit-content;
+	background-color: rgb(219, 255, 201);
+	border: 2px solid black;
+	border-right: 3px solid black;
+	padding: 2vh;
+	
+}
+
+#climbing-main {
+	
+}
+
+#create-hold-form {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+}
+
+#hold-image-container {
+	display: grid;
+	grid-template-rows: repeat(3, 3.33vh);
+	grid-template-columns: repeat(3, 3.33vh);
+	width: fit-content;
+	height: fit-content;
+	background-color: rgb(255, 194, 134);
+	padding: 1vh;
+}
+
+#add-edge-btn {
+	background-color: rgb(66, 182, 51);
+}
+
+.bolt, .img-bolt {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 30px;
+	height: 30px;
+}
+
+.bolt-hole, .img-bolthole {
+	width: 3px;
+	height: 3px;
+	background-color: black;
+	border-radius: 50%;
+}
+
+#membership-container {
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 10px;
+}
+
+#signup-container, #signin-container {
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	border: 1px solid black;
+	border-radius: 8px;
+	margin-top: 10px;
+	width: fit-content;
+	height: auto;
+}
+
+#wall-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	margin-top: 1vh;
+	outline: 2px solid black;
+}
+
+#climbing-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+	width: 30vw; 
+	height: 84vh;	 
+}
+
+#wall-data {
+	display: flex;
+	align-items: center;
+}
+
+.close-btn {
+	position: absolute;
+	top: 0;
+	right: 0;
+	margin: 3px;
+	color: red;
+	border: none;
+	background-color: transparent;
+	cursor: pointer;
+}
+
+#signup, #signin {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: fit-content;
+	height: auto;
+	margin: 10px;
+	padding: 10px;
+}
+
+.signup-input {
+	border: 1px solid black;
+	border-radius: 8px;
+	margin: 5px;
+	padding: 5px;
+}
+
+#edit-meas-form {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 15px;
+}
+
+label {
+	min-width: 50%;
+	margin-right: 5px;
+	text-align: right;
+}
+
+.form-group {
+	display: flex;
+	justify-content: flex-end;
+	width: 100%;
+	margin: 5px;
+}
+
+#edit-meas-submit-btn {
+	width: 25%
+}
+
+#edit-meas-btn, #logbook-btn, #signout-btn {
+	font-size: 12px !important;
+	text-decoration: underline;
+	background-color: transparent !important;
+	color: #24a0ed !important;
+	max-width: 50%;
+}
+
+#profile-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: fit-content;
+	height: auto;
+}
+
+#measurements-container, #personal-bests-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: fit-content;
+	height: auto;
+	border: 1px solid black;
+	border-radius: 8px;
+	margin: 15px;
+}

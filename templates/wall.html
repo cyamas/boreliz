@@ -1,0 +1,22 @@
+<div id="wall-container">
+    <div class="wall" id="{{.ID}}">
+        {{range .Grid}}
+        <div class="bolt" id="{{.ID}}">
+                <div class="bolt-hole"></div>
+        </div>
+        {{end}}
+    </div>
+    <div id="climbing-container">
+        <div id="wall-data">
+            <div style="font-size: 16px; margin: 2vh;">Angle: {{.Angle}}</div>
+            <div style="font-size: 28px; font-weight: 800; margin: 1vh; margin-bottom: 0;">{{.ID}} wall</div>
+            <div style="font-size: 16px; margin: 2vh;">Spacing: 6 inches</div>
+        </div>
+        <div id="climbing-nav">
+            <button hx-get="/create-hold-form" hx-target="#climbing-main" hx-on::after-request="addDragAndDrop()" hx-swap="innerHTML">Create Hold</button>
+            <button>Create Boulder</button>
+            <button>All Boulders</button>
+        </div>
+        <div id="climbing-main"></div>
+    </div>
+</div>

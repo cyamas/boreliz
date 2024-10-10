@@ -1,0 +1,9 @@
+<div id="signin-container">
+    <button class="close-btn" hx-get="/close" hx-target="#signin-container" hx-swap="outerHTML">x</button>
+    <form id="signin" hx-post="/signin" hx-swap="innerHTML">
+        <input class="signup-input" id="username" name="username" placeholder="Username">
+        <input class="signup-input" type="password" id="password" name="password" placeholder="Password">
+        <button>Sign In</button>
+    </form>
+</div>
+

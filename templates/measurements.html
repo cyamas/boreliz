@@ -1,0 +1,20 @@
+{{ define "measurements" }}
+<h5>Measurements</h5>
+<table>
+    <thead>
+        <tr>
+            <th>Height</th>
+            <th>Vertical Reach</th>
+            <th>Wingspan</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>{{ .Height }}</td>
+            <td>{{ .VertReach }}</td>
+            <td>{{ .Wingspan }}</td>
+        </tr>
+    </tbody>
+</table>
+<button id="edit-meas-btn" hx-get="/edit-meas-form" hx-target="#measurements-container" hx-swap="innerHTML">Edit</button>
+{{ end }}

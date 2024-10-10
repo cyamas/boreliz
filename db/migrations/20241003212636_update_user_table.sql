@@ -1,0 +1,17 @@
+-- +goose Up
+DROP TABLE IF EXISTS users;
+CREATE TABLE users (
+	id SERIAL PRIMARY KEY,
+	username VARCHAR(255) NOT NULL UNIQUE,
+	password VARCHAR(255) NOT NULL,
+	salt VARCHAR(255) NOT NULL,
+	height INT NOT NULL DEFAULT 0,
+	wingspan INT NOT NULL DEFAULT 0,
+	max_grade INT NOT NULL DEFAULT 0,
+	percent_wingspan INT NOT NULL DEFAULT 0,
+	percent_vert_reach INT NOT NULL DEFAULT 0,
+	created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- +goose Down
+DROP TABLE users;

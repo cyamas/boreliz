@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A brief description of your web page">
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <meta name="author" content="Your Name">
+    <title>Boreliz</title>
+    <script src="https://unpkg.com/htmx.org@2.0.2"></script>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    {{ if .IsAuthed }}
+        <div hx-get="/profile" hx-target="#membership-container" hx-swap="innerHTML" hx-trigger="load"></div>
+    {{ end }}
+    <h1>Boreliz</h1>
+    <div id="main-nav">
+        <div id="membership-container">
+            <button id="signup-form" hx-get="/signup-form" hx-target="#main" hx-swap="innerHTML">Sign Up</button>
+            <button id="signin-form" hx-get="/signin-form" hx-target="#main" hx-swap="innerHTML">Sign In</button>
+        </div>
+        <select id="wall-select" name="wall-name" hx-post="/select-wall" hx-target="#main" hx-swap="innerHTML">
+            <option value="" disabled selected>Select Wall</option>
+            <option value="yama">YAMA</option>
+            <option value="marjoram">MARJORAM</option>
+        </select>
+    </div>
+    <div id="main"></div>
+    <script src="static/scripts.js"></script>
+</body>
+</html>
+
